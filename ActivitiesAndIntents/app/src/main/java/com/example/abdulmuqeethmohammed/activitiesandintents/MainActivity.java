@@ -11,6 +11,7 @@ public class MainActivity extends Activity {
 
     private Button input;
     private Button dial;
+    private final int resultCode =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MainActivity extends Activity {
 
     // Method to start InputNumber Activity
     private void switchToInputNumber(){
-
+         Intent i = new Intent(MainActivity.this, InputNumberActivity.class);
+         startActivityForResult(i, resultCode);
     }
 }
