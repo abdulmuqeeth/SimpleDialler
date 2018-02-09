@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ActivitiesAndIntents</string>
     <string name="welcome_text">Hello, User!</string>
-    <string name="button1">Enter the number</string>
+    <string name="button1">Input the number</string>
     <string name="button2">Dial</string>
 </resources>

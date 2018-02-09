@@ -31,7 +31,7 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/inputButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button1"
@@ -39,7 +39,7 @@
             />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/dialButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button2"
