@@ -27,8 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InputNumberActivity"
-            android:label="@string/title_activity_input_number"></activity>
+            android:name=".InputNumberActivity"></activity>
     </application>
 
 </manifest>

@@ -19,15 +19,15 @@ public class InputNumberActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_number);
         numberField = (EditText) findViewById(R.id.phoneNumberWidget);
+        //setting up listener for EditText widget
         numberField.setOnEditorActionListener(numberListener);
     }
 
+    //Listener for EditText widget
     public TextView.OnEditorActionListener numberListener = new TextView.OnEditorActionListener() {
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-
                 captureNumber();
                 return true;
             } else {
@@ -36,22 +36,21 @@ public class InputNumberActivity extends Activity {
         }
     };
 
-    //Method to retrieve the number
-    public void captureNumber() {
+    //Method to retrieve the number and perform regex comparison
+    private void captureNumber() {
         Intent i = getIntent();
         number = numberField.getText().toString();
 
         if (number.matches("\\s*\\(\\d{3}\\)\\s\\d{3}\\-\\d{4}\\s*")) {
             Log.i("Regex Match", "True");
-            Toast.makeText(this, "Valid number", Toast.LENGTH_SHORT).show();
             setResult(RESULT_OK, i);
-            i.putExtra("number", number);
+            i.putExtra("number", number.trim());
             //finish the activity
             finish();
         } else {
             Log.i("Regex Match", "False");
             setResult(RESULT_CANCELED, i);
-            i.putExtra("number", number);
+            i.putExtra("number", number.trim());
             //finish the activity
             finish();
         }
